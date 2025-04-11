@@ -33,3 +33,10 @@ export default async function Page({ params }: PageProps) {
     </main>
   );
 }
+
+export async function generateStaticParams() {
+  return Object.keys(pageContents).map((slugPath) => {
+    const slugArray = slugPath === "" ? [] : slugPath.split("/");
+    return { slug: slugArray };
+  });
+}
