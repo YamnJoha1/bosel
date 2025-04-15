@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="relative top-0 w-full h-screen bg-cover bg-center bg-no-repeat">
+    <section className="relative top-0 max-w-full overflow-hidden h-screen bg-cover bg-center bg-no-repeat">
       <div className="absolute inset-0 h-full">
         <Image 
           src="/hero.jpg" 
@@ -27,13 +27,13 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl font-bold sm:text-2xl md:text-[40px] -rotate-90 text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-transparent">
-              Willkommen bei Bosel
+              Willkommen   an der  Bosel
             </h1>
             <div className='absolute left-55 -top-20 flex flex-col items-center w-full gap-12'>
               <p className="mt-4 text-base w-80 pl-2 sm:text-lg md:text-xl text-white/90 drop-shadow-sm">
-                Erleben Sie unvergessliche Momente mit unseren Pferden – Natur, Freiheit und Abenteuer warten auf Sie.
+              Pferde, frische Luft und jede Menge Spaß – auf unserer Reitanlage an der Bosel kannst du die Natur erleben und das Reiten lernen.
               </p>
-              <Button className='text-xl '>Events</Button>
+              <a href="#das"><Button className='text-xl '>entdecke jetzt</Button></a>
             </div>
           </motion.div>
         </div>

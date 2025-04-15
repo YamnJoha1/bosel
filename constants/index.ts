@@ -4,6 +4,7 @@ export const NAV_LINKS = [
     label: "Reitanlage",
     href: "/reitanlage",
     sublinks: [
+      { key: "reithalle", label: "Reithalle", href: "/reitanlage/reithale" },
       { key: "trainingsmoeglichkeiten", label: "Trainingsmöglichkeiten", href: "/reitanlage/trainingsmoeglichkeiten" },
       { key: "aussenanlage", label: "Außenanlage", href: "/reitanlage/aussenanlage" },
       { key: "theater-show", label: "Theater Pferde Show 2016", href: "/reitanlage/theater-show-2016" },
@@ -29,16 +30,20 @@ export const NAV_LINKS = [
 
 export const faqs = [
   {
-    question: "Wo befindet sich der Pferdehof?",
-    answer: "Der Hof liegt im Herzen der deutschen Landschaft in der Nähe von München.",
+    question: "Reiterferien für Kinder",
+    answer: "Es werden Ferienprogramme für Kinder am Ostern ,Herbst und Sommer angeboten, die Reiten und Pferdepflege beinhalten.",
   },
   {
-    question: "Welche Pferderassen sind verfügbar?",
-    answer: "Wir haben eine Auswahl an edlen arabischen Vollblütern und gut ausgebildeten deutschen Pferden.",
+    question: "Pferdepension",
+    answer: "Wir bieten Plätze für die Unterbringung von Pferden (aktuell freie Boxen).",
   },
   {
-    question: "Kann man einen Besuch buchen?",
-    answer: "Ja, Besuche können über unser Buchungsformular oder telefonisch vereinbart werden.",
+    question: "Reitschule",
+    answer: "Es gibt Reitstunden für Anfänger und Fortgeschrittene.",
+  },
+  {
+    question: "Ist unsere Anlage weitweg?",
+    answer: "Nein ,jeder schafft es,weil es wertvoll ist",
   },
 ];
 
@@ -48,24 +53,24 @@ export const FOOTER_LINKS = [
     title: 'Mehr Erfahren',
     links: [
       'Über uns',
-      'Presse',
-      'Datenschutz',
-      'AGB',
-      'Impressum',
+      'Reitanlage',
+      'Pferdepension',
+      'Ausbildung',     
       'Kontakt',
     ],
   },
   {
-    title: 'Unsere Community',
-    links: ['Reiterverein', 'Reiterferien', 'Reitschule'],
+    title: 'Speziell',
+    links: ['Reiterferien', 'Reiterverein', 'Reitschule'],
   },
 ];
 
 export const FOOTER_CONTACT_INFO = {
   title: 'Kontakt',
   links: [
-    { label: 'Telefon', value: '+49 123 456789' },
-    { label: 'E-Mail', value: 'info@pferdehof.de' },
+    { label: 'Telefon', value: '03523-77 45 00' },
+    { label: 'E-Mail', value: 'info@reitanlage-bosel.de' },
+    { label: 'Adresse', value: 'Köhlerstraße 107, 01640 Coswig ' },
   ],
 };
 
@@ -74,28 +79,28 @@ export const SOCIALS = {
   links: [
     'icons/facebook.svg',
     'icons/instagram.svg',
-    'icons/youtube.svg',
-    'icons/twitter.svg',
+    
+  
   ],
 };
 
 export const FEATURES_CARD_CONTENT = [
     {
-      title: "Reitanlage",
+      title: "Osterferien 2025",
       description:
-        "Moderne Reithallen und weitläufige Außenplätze für jedes Trainingsniveau.",
-      image: "/Home.jpg",
+        "1. Woche  21.04  bis  26.04.2025",
+      image: "/Ostern.jpg",
     },
     {
-      title: "Pferdepension",
+      title: "Sommerferien 2025",
       description:
-        "Komfortable Stallungen und liebevolle Betreuung für Ihr Pferd.",
-      image: "/Home.jpg",
+        "1. Woche  30.06.  bis  05.07.2025,  2. Woche  07.07.  bis  12.07.2025  3.Woche  14.07.  bis  19.07.2025 4. Woche  21.07.  bis  26.07.2025 5. Woche  28.07.  bis  01.08.2025 6. Woche  04.08.  bis  09.08.2025",       
+      image: "/Sommer.jpg",
     },
     {
-      title: "Reiterferien",
+      title: "Herbstferien 2025",
       description:
-        "Unvergessliche Ferien für Kinder und Jugendliche mit Pferden und Natur.",
-      image: "/Home.jpg",
+        "1. Woche  06.10.  bis  11.10.2025 2. Woche  13.10.  bis  18.10.2025",
+      image: "/Herbst.jpg",
     },
   ];

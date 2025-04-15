@@ -7,8 +7,8 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground mt-20 border-t border-gold-300 px-10 py-12">
-      <div className="max-container grid grid-cols-1 md:grid-cols-3 gap-10">
+    <footer className="bg-primary text-primary-foreground mt-20 shadow-inner pt-6 md:pt-10">
+      <div className="max-container grid grid-cols-1 md:grid-cols-3  gap-6 md:gap-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -23,8 +23,7 @@ const Footer = () => {
             />
           </Link>          
           <p className="text-sm text-muted mt-5">
-            Ihre Adresse für Reiterlebnisse, Ferien auf dem Bauernhof und Pferdepension.
-          </p>
+          Erlebe unvergessliche Reiterferien, tolle Reitmöglichkeiten und professionelle Pferdepension auf unserer Reitsportanlage mitten in der Natur.          </p>
         </motion.div>
 
         <motion.div
@@ -64,7 +63,7 @@ const Footer = () => {
             ))}
           </ul>
 
-          <div className="mt-4 flex gap-3">
+          <div className="mt-4 flex gap-3 w-20">
             {SOCIALS.links.map((icon, i) => (
               <Image key={i} src={icon} alt="social" width={24} height={24} />
             ))}
@@ -73,7 +72,7 @@ const Footer = () => {
       </div>
 
       <div className="text-center text-sm text-muted-backgound mt-15">
-        © {new Date().getFullYear()} JOCODEX. Alle Rechte vorbehalten.
+        © {new Date().getFullYear()} Scripto. Alle Rechte vorbehalten.
       </div>
     </footer>
   );

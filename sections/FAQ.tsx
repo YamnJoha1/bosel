@@ -14,8 +14,8 @@ export default function FAQSection() {
   };
 
   return (
-    <div className="w-full max-w-3xl px-4 md:px-8 mx-auto padding-section max-container flex flex-col items-center text-center">
-      <h2 className="text-3xl font-bold text-center mb-10 title-section">Häufig gestellte Fragen</h2>
+    <div className="max-w-full px-6 sm:px-10 md:px-16 lg:px-24 xl:px-40 py-10 max-container flex flex-col items-center text-center">
+      <h2 className="text-3xl font-bold text-center mb-10 title-section">Fragst du an?</h2>
       <div className="space-y-4 w-full m-5 my-7">
         {faqs.map((faq, index) => {
           const isOpen = openIndex === index;

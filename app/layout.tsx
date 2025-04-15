@@ -2,7 +2,6 @@ import { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Fira_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const firaSans = Fira_Sans({
@@ -51,7 +50,6 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
       <body
         className={`${firaSans.variable} font-sans antialiased bg-white text-gray-900`}
       >
-        <Navbar />
         {children}
         <Footer />
       </body>
