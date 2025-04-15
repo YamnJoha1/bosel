@@ -9,8 +9,9 @@ type LayoutProps = {
   params: { slug?: string[] };
 };
 
-export default function SubPageLayout({ children, params }: LayoutProps) {
-  const slugPath = params.slug?.join("/") || "";
+export default async function SubPageLayout({ children, params }: LayoutProps) {
+  const slugArray = await params?.slug || [];
+  const slugPath = slugArray.join("/");
   const content = pageContents[slugPath];
 
   if (!content) return notFound();
@@ -19,7 +20,7 @@ export default function SubPageLayout({ children, params }: LayoutProps) {
     <>
       <PageHeader title={content.title} />
       <AnimatePageWrapper>
-      <main>{children}</main>
+        <main>{children}</main>
       </AnimatePageWrapper>
     </>
   );

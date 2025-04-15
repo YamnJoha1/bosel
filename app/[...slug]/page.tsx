@@ -1,5 +1,3 @@
-"use clinet"
-
 import { notFound } from "next/navigation";
 import { ImageSlider } from "@/components/pagesComponents/ImageSlider";
 import { pageContents } from "@/constants/pagesContents";
@@ -12,10 +10,9 @@ type PageProps = {
   };
 };
 
-export async function generateMetadata(
-  { params }: PageProps
-): Promise<Metadata> {
-  const slugPath = params.slug?.join("/") || "";
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const slugArray = await params?.slug || [];
+  const slugPath = slugArray.join("/");
   const content = pageContents[slugPath];
 
   if (!content) {
@@ -37,7 +34,8 @@ export async function generateMetadata(
 }
 
 export default async function Page({ params }: PageProps) {
-  const slugPath = params.slug?.join("/") || "";
+  const slugArray = await params?.slug || [];
+  const slugPath = slugArray.join("/");
   const content = pageContents[slugPath];
 
   if (!content) return notFound();
@@ -56,18 +54,15 @@ export default async function Page({ params }: PageProps) {
           </p>
         </div>
 
-        {/* Info Card */}
         {!isKontaktPage && <InfoCard />}
       </section>
 
-      {/* Optional Extra Content */}
       {content.extra && (
         <section className="space-y-4">
           {content.extra}
         </section>
       )}
 
-      {/* Image Slider */}
       {content.images && content.images.length > 0 && (
         <section>
           <ImageSlider images={content.images} />
