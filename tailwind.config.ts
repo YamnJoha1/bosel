@@ -1,15 +1,23 @@
 module.exports = {
-  // your content config...
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+  ],
   plugins: [require("tailwindcss-animate")],
   theme: {
     extend: {
       colors: {
-        gold: '#D4AF37',
-        darkGreen: '#014421',
+        green: "var(--color-green)",
+        darkGreen: "var(--color-dark-green)",
+        light: "var(--color-light)",
+        gold: "var(--color-gold)",
+        black: "var(--color-black)",
+        white: "var(--color-white)",
       },
       fontFamily: {
         german: ['"Fira Sans"', 'sans-serif'],
       },
     },
-  }  
+  },
 };

@@ -50,7 +50,7 @@ const Navbar = () => {
   return (
     <header
       className={`w-full fixed top-0 z-50 transition-all duration-300 max-w-full
-        ${scrolled ? "bg-primary bg-opacity-95 shadow-md" : "bg-transparent lg:pl-34"}
+        ${scrolled ? "bg-primary shadow-md" : "bg-transparent lg:pl-34"}
         h-[10vh] md:h-[12vh] lg:h-[14vh]
         px-4 sm:px-6 md:px-10 lg:px-26
       `}

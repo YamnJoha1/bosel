@@ -4,7 +4,7 @@ export const NAV_LINKS = [
     label: "Reitanlage",
     href: "/reitanlage",
     sublinks: [
-      { key: "reithalle", label: "Reithalle", href: "/reitanlage/reithale" },
+      { key: "reithalle", label: "Reithalle", href: "/reitanlage/reithalle" },
       { key: "trainingsmoeglichkeiten", label: "Trainingsmöglichkeiten", href: "/reitanlage/trainingsmoeglichkeiten" },
       { key: "aussenanlage", label: "Außenanlage", href: "/reitanlage/aussenanlage" },
       { key: "theater-show", label: "Theater Pferde Show 2016", href: "/reitanlage/theater-show-2016" },
@@ -47,23 +47,6 @@ export const faqs = [
   },
 ];
 
-// FOOTER SECTION
-export const FOOTER_LINKS = [
-  {
-    title: 'Mehr Erfahren',
-    links: [
-      'Über uns',
-      'Reitanlage',
-      'Pferdepension',
-      'Ausbildung',     
-      'Kontakt',
-    ],
-  },
-  {
-    title: 'Speziell',
-    links: ['Reiterferien', 'Reiterverein', 'Reitschule'],
-  },
-];
 
 export const FOOTER_CONTACT_INFO = {
   title: 'Kontakt',
@@ -89,18 +72,26 @@ export const FEATURES_CARD_CONTENT = [
       title: "Osterferien 2025",
       description:
         "1. Woche  21.04  bis  26.04.2025",
-      image: "/Ostern.jpg",
+      image: "/Features/feature-1.jpg",
     },
     {
       title: "Sommerferien 2025",
-      description:
-        "1. Woche  30.06.  bis  05.07.2025,  2. Woche  07.07.  bis  12.07.2025  3.Woche  14.07.  bis  19.07.2025 4. Woche  21.07.  bis  26.07.2025 5. Woche  28.07.  bis  01.08.2025 6. Woche  04.08.  bis  09.08.2025",       
-      image: "/Sommer.jpg",
+      description:{
+        1:"Woche  30.06.  bis  05.07.2025.",
+        2:"Woche  07.07.  bis  12.07.2025",
+        3:"Woche  14.07.  bis  19.07.2025",
+        4:"Woche  21.07.  bis  26.07.2025",
+        5:"Woche  28.07.  bis  01.08.2025",
+        6:"Woche  04.08.  bis  09.08.2025",
+      },
+      image: "/Features/feature-2.jpg",
     },
     {
       title: "Herbstferien 2025",
-      description:
-        "1. Woche  06.10.  bis  11.10.2025 2. Woche  13.10.  bis  18.10.2025",
-      image: "/Herbst.jpg",
+      description:{
+        1:"Woche  06.10 bis  11.10.2025 .",
+        2:"Woche  13.10.  bis  18.10.2025"
+      },
+      image: "/Features/feature-3.jpg",
     },
   ];

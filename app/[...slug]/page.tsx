@@ -1,18 +1,19 @@
 import { notFound } from "next/navigation";
-import { ImageSlider } from "@/components/pagesComponents/ImageSlider";
-import { pageContents } from "@/constants/pagesContents";
-import InfoCard from "@/components/pagesComponents/InfoCard";
 import { Metadata } from "next";
+import { pageContents } from "@/constants/pagesContents";
+import { PageHeader } from "@/components/pagesComponents/PageHeader";
+import { ImageSlider } from "@/components/pagesComponents/ImageSlider";
+import InfoCard from "@/components/pagesComponents/InfoCard";
+import AnimatePageWrapper from "@/components/AnimatePageWrapper";
 
-type PageProps = {
+type PageParams = {
   params: {
     slug?: string[];
   };
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const slugArray = await params?.slug || [];
-  const slugPath = slugArray.join("/");
+export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
+  const slugPath = (params.slug ?? []).join("/");
   const content = pageContents[slugPath];
 
   if (!content) {
@@ -33,9 +34,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function Page({ params }: PageProps) {
-  const slugArray = await params?.slug || [];
-  const slugPath = slugArray.join("/");
+export default async function Page({ params }: PageParams) {
+  const slugPath = (params.slug ?? []).join("/");
   const content = pageContents[slugPath];
 
   if (!content) return notFound();
@@ -43,31 +43,27 @@ export default async function Page({ params }: PageProps) {
   const isKontaktPage = slugPath === "kontakt";
 
   return (
-    <main className="max-w-7xl mx-auto px-4 py-12 space-y-12">
-      {/* Top section: Content + Sidebar */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Main Text */}
-        <div className="md:col-span-2 space-y-6">
-          <h1 className="text-4xl font-bold text-green-900">{content.title}</h1>
-          <p className="text-lg text-gray-700 leading-relaxed whitespace-pre-line">
-            {content.description}
-          </p>
-        </div>
-
-        {!isKontaktPage && <InfoCard />}
-      </section>
-
-      {content.extra && (
-        <section className="space-y-4">
-          {content.extra}
-        </section>
-      )}
-
-      {content.images && content.images.length > 0 && (
-        <section>
-          <ImageSlider images={content.images} />
-        </section>
-      )}
-    </main>
+    <>
+      <PageHeader title={content.title} />
+      <AnimatePageWrapper>
+        <main className="padding-section mx-auto px-4 py-12 space-y-12 bg-primary-foreground text-white">
+          <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="md:col-span-2 space-y-6">
+              <h1 className="text-4xl font-bold title-section">{content.title}</h1>
+              <p className="text-lg text-white/90 leading-relaxed whitespace-pre-line">
+                {content.description}
+              </p>
+            </div>
+            {!isKontaktPage && <InfoCard />}
+          </section>
+          {content.extra && <section className="space-y-4">{content.extra}</section>}
+          {content.images && (
+            <section>
+              <ImageSlider images={content.images} />
+            </section>
+          )}
+        </main>
+      </AnimatePageWrapper>
+    </>
   );
 }

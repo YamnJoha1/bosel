@@ -25,7 +25,7 @@ export default function FAQSection() {
             <Card
               key={index}
               onClick={() => toggle(index)}
-              className="rounded-2xl w-[70%] shadow-md mx-auto cursor-pointer max-h-fit transition-all duration-300 ease-in-out"
+              className="rounded-2xl w-[70%] shadow-md mx-auto border-none cursor-pointer max-h-fit transition-all duration-300 ease-in-out"
             >
               <div className="flex items-baseline-last justify-between px-4 min-h-[28px] h-[28px] text-left text-lg font-medium">
                 <span className="flex-1">{faq.question}</span>

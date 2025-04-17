@@ -33,8 +33,11 @@ export const ImageSlider = ({ images, interval = 4000 }: ImageSliderProps) => {
     setCurrent(index);
     resetInteractionTimer();
   };
-
-  const handleDragEnd = (_: any, info: { offset: { x: number } }) => {
+  
+  const handleDragEnd = (
+    _event: MouseEvent | TouchEvent | PointerEvent,
+    info: { offset: { x: number } }
+  ) => {
     const offsetX = info.offset.x;
     const threshold = 100;
     if (offsetX > threshold) prevSlide();

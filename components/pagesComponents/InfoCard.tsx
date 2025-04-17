@@ -1,12 +1,19 @@
-import React from 'react'
+import React from "react";
+import Image from "next/image";
 
 const InfoCard = () => {
   return (
-    <aside className="bg-green-800 border shadow-md rounded-2xl p-6 space-y-4 text-sm text-white flex flex-col items-center text-center">
-      <img src="/Bosel-Logo.png" alt="Logo" className="w-24 h-auto mb-2" />
-      <div className='h-[1px] w-[50%] bg-gold' />
-      <p className="font-semibold text-base text-green-800">
-        Reitsportanlage "An der Bosel"
+    <aside className="bg-primary shadow-md rounded-2xl p-6 space-y-4 text-sm text-white flex flex-col items-center text-center">
+      <Image
+        src="/Bosel-Logo.png"
+        alt="Logo"
+        width={96}
+        height={96}
+        className="mb-2 h-auto w-24"
+      />
+      <div className="h-[1px] w-[50%] bg-gold" />
+      <p className="font-semibold text-base text-gold">
+        Reitsportanlage &quot;An der Bosel&quot;
       </p>
 
       <p>
@@ -16,16 +23,14 @@ const InfoCard = () => {
       </p>
 
       <p>
-        Tel:  <span className='text-gold'>03523-77 45 00</span><br />
-        Funk: <span className='text-gold'>0172/4417297</span> 
+        Tel: <span className="text-gold">03523-77 45 00</span>
+        <br />
+        Funk: <span className="text-gold">0172/4417297</span>
       </p>
 
       <p>
         Email:{" "}
-        <a
-          href="mailto:info@reitanlage-bosel.de"
-          className="text-blue-600 underline"
-        >
+        <a href="mailto:info@reitanlage-bosel.de" className="text-gold underline">
           info@reitanlage-bosel.de
         </a>
       </p>
@@ -33,16 +38,16 @@ const InfoCard = () => {
       <p>
         Website:{" "}
         <a
-          href="https://www.reitanlage-bosel.de"
+          href="/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-600 underline"
+          className="text-gold underline"
         >
           www.reitanlage-bosel.de
         </a>
       </p>
     </aside>
-  )
-}
+  );
+};
 
-export default InfoCard
+export default InfoCard;
