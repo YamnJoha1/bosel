@@ -36,7 +36,9 @@ const FeatureCard = ({ title, description, image }: FeatureCardProps) => {
           )}
         </div>
         <Link href="/reiterferien">
-          <Button variant="outline" className='mt-5'>Read More</Button>
+          <Button variant="outline" className='mt-5'>
+            Mehrere Infos
+          </Button>
         </Link>
       {/* </div> */}
     </motion.div>

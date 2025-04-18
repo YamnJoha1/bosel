@@ -1,3 +1,6 @@
+import ContentReitanlage from "@/components/ContentComponent/ContentReitanlage";
+import ContentReiterferien from "@/components/ContentComponent/ContentReiterferien";
+import ExtraKonakt from "@/components/pagesComponents/ExtraKontakt";
 import ExtraReiterferien from "@/components/pagesComponents/ExtraReiterferien";
 import { ReactNode } from "react";
 
@@ -6,12 +9,16 @@ type PageContent = {
   description: string;
   images?: string[];
   extra?: ReactNode;
+  content?: ReactNode;
 };
 
 export const pageContents: Record<string, PageContent> = {
   "reitanlage": {
     title: "Unsere Reitanlage",
     description: `Hier finden Sie alles über unsere Trainingsmöglichkeiten, Außenanlagen und mehr.`,
+    content: (
+      <ContentReitanlage />    
+    ),
     images: ["/hero.jpg", "/Home.jpg"],
   },
 
@@ -82,90 +89,41 @@ export const pageContents: Record<string, PageContent> = {
   },
 
   "reitverein": {
-    title: "Reitverein",
+    title: "Reitsportverein",
     description: `Gemeinsam stark – unser Reitverein fördert Sport, Gemeinschaft und Nachwuchs.`,
     images: ["/verein.jpg"],
   },
 
  "kontakt": {
   title: "Kontakt",
-  description: `So erreichen Sie uns – wir freuen uns auf Ihre Nachricht oder Ihren Besuch!`,
+  description: 'Melde dich einfach-wir freuen uns, von dir zu hören oder dich mal zu sehen',
   images: ["/kontakt.jpg"],
   extra: (
-    <div className="flex flex-col md:flex-row w-full justify-between gap-6 md:gap-10 items-center p-2">
-      <div className="space-y-4 text-sm text-gray-700">
-        <p className="font-semibold text-base text-green-800">
-          Reitsportanlage "An der Bosel"
-        </p>
-
-        <p>
-          Köhlerstraße 107<br />
-          01640 Coswig<br />
-          OT Neusörnewitz
-        </p>
-
-        <p>
-          Tel.: 03523-77 45 00<br />
-          Fax: 03523-77 45 01<br />
-          Funk: 0172/44 17 297
-        </p>
-
-        <p>
-          Email:{" "}
-          <a href="mailto:info@reitanlage-bosel.de" className="text-blue-600 underline">
-            info@reitanlage-bosel.de
-          </a>
-        </p>
-
-        <p>
-          Website:{" "}
-          <a
-            href="https://www.reitanlage-bosel.de"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 underline"
-          >
-            www.reitanlage-bosel.de
-          </a>
-        </p>
-
-        {/* Google Map */}
-      </div>
-      <div className="flex-1 shadow-lg rounded-lg p-3 w-full">
-        <iframe
-          title="Bosel Map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2463.184444735795!2d13.544490315894801!3d51.13759947957551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4708939994db7c63%3A0x9f18a2e5794aa542!2sReitsportanlage%20%22An%20der%20Bosel%22!5e0!3m2!1sen!2sde!4v1713200000000!5m2!1sen!2sde"
-          width="100%"
-          height="300"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="rounded-xl shadow"
-        ></iframe>
-      </div>
-    </div>
+    <ExtraKonakt />
   ),
 },
 
 
-  "reiterferien": {
-    title: "Reiterferien 2025",
-    description: `Osterferien, Sommerferien und Herbstferien – hier finden Sie alle Termine und Preise.
+"reiterferien": {
+  title: "Reiterferien 2025",
+  description: `Osterferien, Sommerferien und Herbstferien – hier finden Sie alle Termine und Preise.
 
-An-/Abreise:
-Die Anreise erfolgt am Anreisetag ab 10 Uhr, die Abreise erfolgt am Abreisetag bis 11 Uhr.
+  An-/Abreise:
+  Die Anreise erfolgt am Anreisetag ab 10 Uhr, die Abreise erfolgt am Abreisetag bis 11 Uhr.
 
-Unterkunft:
-Mehrbettzimmer auf dem Gelände der Reitanlage, WC, Dusche, Aufenthaltsraum.
+  Unterkunft:
+  Mehrbettzimmer auf dem Gelände der Reitanlage, WC, Dusche, Aufenthaltsraum.
 
-Verpflegung:
-Frühstück, Mittagessen, Abendbrot.
+  Verpflegung:
+  Frühstück, Mittagessen, Abendbrot.
 
-Möchten Sie Ihre Kinder anmelden? Bitte Formular ausdrucken und senden.`,
-    extra: (
-      <ExtraReiterferien />
-    ),
-    images: ["/ferien1.jpg", "/ferien2.jpg"],
+  Möchten Sie Ihre Kinder anmelden? Bitte Formular ausdrucken und senden.`,
+  content: (
+    <ContentReiterferien />    
+  ),
+  extra: (
+    <ExtraReiterferien />
+  ),
+  images: ["/Features/feature-1.jpg", "/Features/feature-2.jpg"],
   },
 };

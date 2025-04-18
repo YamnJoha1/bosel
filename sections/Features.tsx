@@ -25,7 +25,7 @@ const Features = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Unsere Angebote
+          Reiterferien
         </motion.h2>
 
         <motion.p
@@ -34,8 +34,7 @@ const Features = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          Entdecken Sie unser vielfältiges Angebot – ob professionelle Reitanlage, liebevolle
-          Pferdepension oder spannende Reiterferien.
+          Ab ins Abenteuer! Jetzt mitmachen
         </motion.p>
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">

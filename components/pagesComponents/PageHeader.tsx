@@ -37,7 +37,7 @@ export function PageHeader({ title }: { title?: string }) {
   }, [activeDropdown]);
 
   return (
-    <div className="relative h-[25vh] md:h-[42vh] text-white mb-2">
+    <div className="relative h-[25vh] md:h-[42vh] text-gold">
       {/* Background Image */}
       <Image
         src="/home-bosel.jpg"
