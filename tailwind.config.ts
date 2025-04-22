@@ -12,6 +12,7 @@ module.exports = {
         darkGreen: "var(--color-dark-green)",
         light: "var(--color-light)",
         gold: "var(--color-gold)",
+        goldHover: "var(--color-goldhover)",
         black: "var(--color-black)",
         white: "var(--color-white)",
       },

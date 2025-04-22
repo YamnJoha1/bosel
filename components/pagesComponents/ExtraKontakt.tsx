@@ -4,7 +4,7 @@ const ExtraKonakt = () => {
     <div className="flex flex-col md:flex-row w-full justify-between gap-6 md:gap-10 items-center p-2 pt-0">
       <div className="space-y-4 text-sm text-white">
         <p className="font-semibold text-base text-gold">
-          Reitsportanlage "An der Bosel"
+          Reitsportanlage &quot;An der Bosel&quot;
         </p>
 
         <p>

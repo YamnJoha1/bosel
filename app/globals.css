@@ -64,7 +64,7 @@
     @apply mx-auto max-w-[1440px];
   }
   .padding-section {
-    @apply max-w-full px-6 sm:px-10 md:px-16 lg:px-24 xl:px-40 py-10 min-h-[86vh];
+    @apply max-w-full px-6 sm:px-10 md:px-16 lg:px-24 xl:px-40 py-10 md:min-h-[86vh];
   }
   .title-gradient {
     @apply bg-clip-text text-transparent text-4xl font-bold;
@@ -79,6 +79,12 @@
   }
   .loaded {
     @apply opacity-100;
+  }
+  .line-clamp-custom {
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
 
@@ -96,7 +102,7 @@
     background-color: var(--color-gold);
   }
   .text-goldhover {
-    color: var(--color-goldhover);
+    color: var(--color-goldHover);
   }
   .bg-green {
     background-color: var(--color-green);
@@ -117,11 +123,11 @@
   /* الألوان الأساسية */
   --color-green: #088b0c; /* الأخضر الأساسي */
   --color-hovergreen: #3fc73f;
-  --color-dark-green: #035c2e; /* الأخضر الغامق */
-  --color-background-green: #047c3e; /* الأخضر الغامق */
+  --color-dark-green: #004f38; /* الأخضر الغامق */
+  --color-background-green: #002e21; /* الأخضر الغامق */
   --color-light: #f8f9fa; /* أبيض فاتح */
   --color-gold: #d7b369;
-  --color-goldhover: #e9cd70;
+  --color-goldHover: #9b7909;
   --color-black: #000000;
   --color-light-black: #2b2b2b;
   --color-white: #ffffff;

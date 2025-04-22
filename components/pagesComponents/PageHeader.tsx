@@ -37,10 +37,10 @@ export function PageHeader({ title }: { title?: string }) {
   }, [activeDropdown]);
 
   return (
-    <div className="relative h-[25vh] md:h-[42vh] text-gold">
+    <div className="relative h-[28vh] 2xl:h-[44vh] md:h-[38vh]  lg:h-[40vh] text-gold">
       {/* Background Image */}
       <Image
-        src="/home-bosel.jpg"
+        src="/Natur1.png"
         alt="Header Background"
         fill
         className="object-cover"
@@ -58,10 +58,10 @@ export function PageHeader({ title }: { title?: string }) {
               alt="Bosel Logo"
               width={250}
               height={60}
-              className="cursor-pointer w-30 md:w-full"
+              className="cursor-pointer w-30 2xl:w-70 lg:w-50 md:w-full"
             />
           </Link>
-          <motion.h1 className="text-3xl sm:text-4xl md:text-5xl font-bold"
+          <motion.h1 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
@@ -74,7 +74,7 @@ export function PageHeader({ title }: { title?: string }) {
         {/* Navigation */}
         <nav
           ref={dropdownRef}
-          className="relative w-full bg-green-800 py-2 px-1 md:px-0 md:py-4 mx-auto flex justify-center gap-4 md:gap-6 flex-wrap"
+          className="relative w-full bg-primary py-3 px-1 md:px-0 md:py-4 mx-auto flex justify-center gap-4 md:gap-6 flex-wrap"
         >
           {NAV_LINKS.map((link) => (
             <div
@@ -104,7 +104,7 @@ export function PageHeader({ title }: { title?: string }) {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-1 -translate-x-1 mt-2 bg-green-800 border-lime-200 border text-white rounded-lg shadow-lg px-2 py-1 z-50 min-w-fit"
+                    className="absolute top-full left-1 -translate-x-1 mt-2 bg-primary border-lime-200 border text-white rounded-lg shadow-lg px-2 py-1 z-50 min-w-fit"
                   >
                     {link.sublinks.map((sublink) => (
                       <Link

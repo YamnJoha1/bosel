@@ -50,16 +50,16 @@ const Navbar = () => {
   return (
     <header
       className={`w-full fixed top-0 z-50 transition-all duration-300 max-w-full
-        ${scrolled ? "bg-primary shadow-md" : "bg-transparent lg:pl-34"}
-        h-[10vh] md:h-[12vh] lg:h-[14vh]
-        px-4 sm:px-6 md:px-10 lg:px-26
+        ${scrolled ? "bg-primary shadow-md" : "bg-transparent xl:pl-20 2xl:pl-20"}
+        h-[10vh] md:max-h-[12vh] lg:min-h-[12vh] 2xl:min-h-[15vh]
+        px-4 sm:px-6 xl:px-16 2xl:px-20
       `}
     >
       <div className="flex justify-between items-center h-full">
         <Link href="/">
           <motion.div
             animate={{
-              scale: scrolled ? 1.85 : 2,
+              scale: scrolled ? 1.5 : 1.65,
               y: scrolled ? 0 : 10,
             }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -70,14 +70,21 @@ const Navbar = () => {
               width={120}
               height={60}
               alt="Bosel Logo"
-              className="w-auto h-auto max-h-8 sm:max-h-10 lg:max-h-12"
-              priority
+              loading="lazy"
+              className="w-auto h-auto 
+                max-h-10
+                sm:max-h-10
+                md:max-h-[38px]
+                lg:max-h-[40px]
+                xl:max-h-[55px]
+                2xl:max-h-[80px]
+              "
             />
           </motion.div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-8 sm:gap-6 font-medium relative">
+        <nav className="hidden md:flex gap-6 font-medium relative text-sm sm:text-base xl:text-[17px] 2xl:text-xl">
           {NAV_LINKS.map((link) =>
             link.sublinks ? (
               <div
@@ -137,7 +144,7 @@ const Navbar = () => {
           onClick={toggleMenu}
           className="md:hidden text-white cursor-pointer"
         >
-         <Menu size={28} />
+          <Menu size={28} />
         </button>
       </div>
 
@@ -160,7 +167,10 @@ const Navbar = () => {
                 height={50}
                 className="h-auto"
               />
-              <button onClick={() => setIsOpen(false)} className="cursor-pointer text-white">
+              <button
+                onClick={() => setIsOpen(false)}
+                className="cursor-pointer text-white"
+              >
                 <X size={28} />
               </button>
             </div>

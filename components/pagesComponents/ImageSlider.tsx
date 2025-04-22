@@ -96,13 +96,13 @@ export const ImageSlider = ({ images, interval = 4000 }: ImageSliderProps) => {
         {/* Navigation Buttons */}
         <button
           onClick={prevSlide}
-          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white text-green-800 p-2 rounded-full shadow"
+          className="cursor-pointer absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white text-green-800 p-2 rounded-full shadow"
         >
           <ChevronLeft size={24} />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white text-green-800 p-2 rounded-full shadow"
+          className="cursor-pointer absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white text-green-800 p-2 rounded-full shadow"
         >
           <ChevronRight size={24} />
         </button>

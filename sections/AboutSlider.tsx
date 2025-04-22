@@ -60,14 +60,20 @@ const AboutSlider = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={currentKey}
-            className="text-center md:text-left"
+            className="text-center md:text-left h-[60vh] md:h-full md:block flex flex-col justify-between overflow-hidden"
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -40 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="title-section text-green-800">{content.title}</h2>
-            <p className="text-gray-700 max-w-xl leading-relaxed mb-6">{content.description}</p>
+            <div className="text-left">
+              <h2 className="title-section text-green-800">{content.title}</h2>
+              <p className="text-gray-700 max-w-xl line-clamp-9 leading-relaxed mb-6">
+                {content.description}
+              </p>
+
+
+            </div>
 
             {/* الدوائر */}
             <div className="hidden md:flex gap-4 justify-start mb-6">
@@ -85,11 +91,11 @@ const AboutSlider = () => {
             {/* Button */}
             {navItem && (
               <Link href={navItem.href}>
-                <motion.button
+                <motion.div
                   whileTap={{ scale: 0.95 }}
                 >
                   <Button variant="green">Mehr erfahren →</Button>
-                </motion.button>
+                </motion.div>
               </Link>
             )}
           </motion.div>

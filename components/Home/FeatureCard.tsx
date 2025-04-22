@@ -26,7 +26,7 @@ const FeatureCard = ({ title, description, image }: FeatureCardProps) => {
           ) : (
             <ul className="text-sm text-white/80 space-y-1 text-left">
               {Object.entries(description)
-                .filter(([_, value]) => value)
+                .filter(([value]) => value)
                 .map(([key, value]) => (
                   <li key={key}>
                     {key}. {value}
