@@ -109,7 +109,7 @@ const Footer = () => {
               {FOOTER_CONTACT_INFO.links.map(({ label, value }) => (
                 <li key={label}>
                   <span>{label}:</span>{" "}
-                  <span>{value}</span>
+                  <span className="text-gold">{value}</span>
                 </li>
               ))}
             </ul>

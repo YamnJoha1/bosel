@@ -80,12 +80,6 @@
   .loaded {
     @apply opacity-100;
   }
-  .line-clamp-custom {
-    display: -webkit-box;
-    -webkit-line-clamp: 10;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
 }
 
 @layer components {
@@ -127,7 +121,7 @@
   --color-background-green: #002e21; /* الأخضر الغامق */
   --color-light: #f8f9fa; /* أبيض فاتح */
   --color-gold: #d7b369;
-  --color-goldHover: #9b7909;
+  --color-goldHover: #fabd44;
   --color-black: #000000;
   --color-light-black: #2b2b2b;
   --color-white: #ffffff;
@@ -142,8 +136,8 @@
   --muted-foreground: var(--color-light-black);
   --primary: var(--color-dark-green);
   --primary-foreground: var(--color-background-green);
-  --secondary: var(--color-light);
-  --secondary-foreground: var(--color-black);
+  --secondary: var(--color-gold);
+  --secondary-foreground: var(--color-goldHover);
 
   /* عناصر أخرى */
   --border: var(--color-gold);

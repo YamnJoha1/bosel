@@ -7,7 +7,7 @@ import { FEATURES_CARD_CONTENT } from "@/constants";
 
 const Features = () => {
   return (
-    <section className="relative padding-section text-white bg-green-800/80 overflow-hidden">
+    <section className="relative padding-section text-white bg-primary/80 overflow-hidden">
       <div className="absolute inset-0">
         <Image
           src="/home-bosel.jpg"

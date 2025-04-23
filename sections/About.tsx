@@ -14,7 +14,7 @@ const VideoSection = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="title-section" >Über Uns</h2>
+          <h2 className="title-section text-primary" >Über Uns</h2>
           <p className="my-5 max-w-xl text-muted-foreground leading-relaxed">
           Wir sind die Reitanlage Bosel, die eine spezialisierte Einrichtung für die Ausbildung und Betreuung von Pferden. Unsere Anlage bietet eine ideale Umgebung für Reitsportbegeisterte, in einer ruhigen, natürlichen Umgebung. Wir verfügen über moderne Stallungen, gut ausgestattete Trainingsplätze und sichere Reitwege, die sowohl für das Pferd als auch für den Reiter höchsten Komfort bietet. 
           Ob Anfänger oder Profi – wir bieten individuelles Training mit erfahrenen Trainern sowie erstklassige Pferdebetreuungsdienste. Unser Ziel ist es, eine unterstützende Umgebung für Pferdeliebhaber zu schaffen, in der Leidenschaft und Professionalität aufeinandertreffen und ein einzigartiges Reiterlebnis ermöglichen.

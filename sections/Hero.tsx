@@ -23,7 +23,7 @@ const Hero = () => {
           layout="fill"
           objectFit="cover"
           quality={100}
-          objectPosition="top"
+          objectPosition={isMobile ? "left" : "top"}
           alt="Hero"
           loading="lazy"
           className="object-top-center"

@@ -51,8 +51,8 @@ const Navbar = () => {
     <header
       className={`w-full fixed top-0 z-50 transition-all duration-300 max-w-full
         ${scrolled ? "bg-primary shadow-md" : "bg-transparent xl:pl-20 2xl:pl-20"}
-        h-[10vh] md:max-h-[12vh] lg:min-h-[12vh] 2xl:min-h-[15vh]
-        px-4 sm:px-6 xl:px-16 2xl:px-20
+        h-[10vh] md:max-h-[12vh] xl:min-h-[12vh] 2xl:min-h-[15vh]
+        px-4 sm:px-6 xl:px-20 2xl:px-20
       `}
     >
       <div className="flex justify-between items-center h-full">
@@ -95,9 +95,9 @@ const Navbar = () => {
               >
                 <Link
                   href={link.href}
-                  className={`flex items-center gap-1 transition-colors hover:text-lime-200 ${
+                  className={`flex items-center gap-1 transition-colors hover:text-secondary   ${
                     pathname.startsWith(link.href)
-                      ? "text-lime-200"
+                      ? "text-secondary"
                       : "text-white"
                   }`}
                 >
@@ -110,13 +110,13 @@ const Navbar = () => {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="absolute left-0 mt-2 bg-primary text-white shadow-xl border border-lime-200 rounded-md w-52 z-50"
+                      className="absolute left-0 mt-2 bg-primary text-white shadow-xl border border-gold rounded-md w-52 z-50"
                     >
                       {link.sublinks.map((sublink) => (
                         <Link
                           key={sublink.key}
                           href={sublink.href}
-                          className="block px-4 py-2 text-sm hover:bg-lime-200 hover:text-primary rounded-md transition-colors"
+                          className="block px-4 py-2 text-sm hover:bg-secondary hover:text-primary rounded-md transition-colors"
                         >
                           {sublink.label}
                         </Link>
@@ -129,8 +129,8 @@ const Navbar = () => {
               <Link
                 key={link.key}
                 href={link.href}
-                className={`transition-colors hover:text-lime-200 ${
-                  pathname === link.href ? "text-lime-200" : "text-white"
+                className={`transition-colors hover:text-secondary ${
+                  pathname === link.href ? "text-gold" : "text-white"
                 }`}
               >
                 {link.label}
@@ -153,7 +153,7 @@ const Navbar = () => {
         {isOpen && (
           <motion.aside
             ref={sidebarRef}
-            className="fixed top-0 right-0 h-screen w-4/5 max-w-xs bg-green-800 text-white shadow-lg z-50 p-6 pt-3 flex flex-col gap-6 overflow-y-auto md:hidden"
+            className="fixed top-0 right-0 h-screen w-4/5 max-w-xs bg-primary text-white shadow-lg z-50 p-6 pt-3 flex flex-col gap-6 overflow-y-auto md:hidden"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}

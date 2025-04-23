@@ -88,8 +88,8 @@ export function PageHeader({ title }: { title?: string }) {
                 onClick={() => toggleDropdown(link.key)}
                 className={`flex items-center gap-1 font-medium text-base sm:text-lg transition-colors ${
                   pathname.startsWith(link.href)
-                    ? "text-lime-300 underline"
-                    : "hover:text-lime-200"
+                    ? "text-secondary-foreground underline"
+                    : "hover:text-gold"
                 }`}
               >
                 {link.label}
@@ -104,14 +104,14 @@ export function PageHeader({ title }: { title?: string }) {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-1 -translate-x-1 mt-2 bg-primary border-lime-200 border text-white rounded-lg shadow-lg px-2 py-1 z-50 min-w-fit"
+                    className="absolute top-full left-1 -translate-x-1 mt-2 bg-primary border-gold border text-white rounded-lg shadow-lg px-2 py-1 z-50 min-w-fit"
                   >
                     {link.sublinks.map((sublink) => (
                       <Link
                         key={sublink.key}
                         href={sublink.href}
-                        className={`block p-1 md:text-lg text-nowrap text-sm rounded hover:bg-lime-200 hover:text-green-800  transition-colors ${
-                          pathname === sublink.href ? "font-semibold text-lime-200" : ""
+                        className={`block p-1 md:text-lg text-nowrap text-sm rounded hover:bg-secondary hover:text-primary  transition-colors ${
+                          pathname === sublink.href ? "font-semibold text-secondary" : ""
                         }`}
                       >
                         {sublink.label}

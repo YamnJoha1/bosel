@@ -3,7 +3,7 @@ import React from 'react'
 
 const Qoute = () => {
   return (
-    <div className='relative h-80 w-full flex flex-col justify-center items-center gap-4 bg-green-800/90 text-white'>
+    <div className='relative h-80 w-full flex flex-col justify-center items-center gap-4 bg-primary/90 text-white'>
       <div className="absolute h-full w-full inset-0 ">
         <Image
           src="/Home.jpg" 
