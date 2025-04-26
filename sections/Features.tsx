@@ -14,6 +14,7 @@ const Features = () => {
           alt="Hintergrund"
           fill
           className="object-cover"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-black/60" />
       </div>

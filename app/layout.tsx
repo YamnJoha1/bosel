@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Fira_Sans } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import RouteLoader from "@/hooks/RouteLoader";
+import AppReadyWrapper from "@/hooks/AppReadyWrapper";
 
 const firaSans = Fira_Sans({
   subsets: ["latin"],
@@ -50,8 +52,11 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
       <body
         className={`${firaSans.variable} font-sans antialiased bg-white text-gray-900`}
       >
-        {children}
-        <Footer />
+        <AppReadyWrapper>
+          <RouteLoader />
+          {children}
+          <Footer />
+        </AppReadyWrapper>
       </body>
     </html>
   );

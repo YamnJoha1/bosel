@@ -49,6 +49,7 @@ const Footer = () => {
                 height={30}
                 alt="logo"
                 className="mx-auto sm:mx-0"
+                loading="lazy"
               />
             </Link>
             <p className="text-sm text-muted mt-5 leading-relaxed hidden sm:block">
@@ -116,7 +117,7 @@ const Footer = () => {
               <div className="flex gap-4 mt-2">
                 {SOCIALS.links.map((icon, i) => (
                   <Link href="#" key={i}>
-                    <Image src={icon} alt="social" width={24} height={24} />
+                    <Image src={icon} alt="social" width={24} height={24} loading="lazy"/>
                   </Link>
                 ))}
               </div>

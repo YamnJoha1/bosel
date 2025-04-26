@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const Hero = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isLarge, setIsLarge] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    const handleResize = () => setIsLarge(window.innerWidth < 1024);
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -23,10 +23,10 @@ const Hero = () => {
           layout="fill"
           objectFit="cover"
           quality={100}
-          objectPosition={isMobile ? "left" : "top"}
+          objectPosition={isLarge ? "left" : "top"}
           alt="Hero"
-          loading="lazy"
           className="object-top-center"
+          priority
         />
         <div className="absolute inset-0 bg-black/10" />
       </div>
@@ -46,7 +46,7 @@ const Hero = () => {
         <motion.div
           className="text-white max-w-md text-center xl:text-left xl:left-[14%] xl:mt-10 2xl:mt-30 xl:absolute"
           initial={{ opacity: 0, y: 0 }}
-          animate={{ opacity: 1, y: isMobile ? -10 : 150 }}
+          animate={{ opacity: 1, y: isLarge ? -10 : 150 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <p className="text-base lg:text-lg 2xl:text-2xl text-white/90 drop-shadow-sm mb-8">

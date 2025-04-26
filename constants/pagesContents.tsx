@@ -1,10 +1,13 @@
 import ContentAusbildung from "@/components/ContentComponent/ContenetAusbildung";
+import ContetnAussenanlage from "@/components/ContentComponent/Contentaussenanlage";
 import ContentBewegungsplaetze from "@/components/ContentComponent/ContentBewegungsplaetze";
 import ContentPferdepension from "@/components/ContentComponent/ContentPferdepension";
 import ContentReitanlage from "@/components/ContentComponent/ContentReitanlage";
 import ContentReiterferien from "@/components/ContentComponent/ContentReiterferien";
 import ContentReitverein from "@/components/ContentComponent/ContentReiterverein";
+import ContentTrainingsmoeg from "@/components/ContentComponent/ContentTrainingsmoeg";
 import ExtraKonakt from "@/components/pagesComponents/ExtraKontakt";
+import ExtraPferdepensio from "@/components/pagesComponents/ExtraPferdepensio";
 import ExtraReiterferien from "@/components/pagesComponents/ExtraReiterferien";
 import { ReactNode } from "react";
 
@@ -29,6 +32,9 @@ export const pageContents: Record<string, PageContent> = {
   "reitanlage/trainingsmoeglichkeiten": {
     title: "Trainingsmöglichkeiten",
     description: `fdsfsdcken im Grünen – perfekt für jede Reiteinheit.`,
+    content: (
+      <ContentTrainingsmoeg />    
+    ),
     
   },
 
@@ -49,13 +55,29 @@ export const pageContents: Record<string, PageContent> = {
   "reitanlage/aussenanlage": {
     title: "Außenanlage",
     description: `Großzügige Außenplätze und Galoppstrecken im Grünen – perfekt für jede Reiteinheit.`,
-    images: ["/aussen1.jpg", "/aussen2.jpg"],
+    content: (
+      <ContetnAussenanlage />    
+    ),
   },
 
   "reitanlage/theater-show-2016": {
     title: "Theater Pferde Show 2016",
     description: `Ein Rückblick auf unsere spektakuläre Pferdeshow im Jahr 2016.`,
-    images: ["/show1.jpg", "/show2.jpg"],
+    content: (
+      <>
+        Die Mitglieder der Coswiger Theatergruppe "immer dieselben" unter der Leitung von Sabine Kralacek, die Mitglieder unseres Reitsportvereines sowie das Team unserer Reitanlage stellten an diesen zwei Tagen eine Veranstaltung der besonderen Art auf die Beine.
+        <br /><br />
+        In dem zweistündigem Programm wurden Szenen aus bekannten Pferdefilmen dargestellt, vertreten waren u.a. "Spirit der wilde Mustang" sowie "Bibi und Tina", das allseits beliebte "Drei Haselnüsse für Aschenbrödel" oder "Der mit dem Wolf tant".
+        <br /><br />
+        Die Schauspieler und Sänger der Theatergruppe teilten sich dabei die Bühne mit zahlreichen tierischen Akteuren. Es wurde gesungen, getanzt und natürlich geritten. Besonders begeistert waren die Zuschauer von den freilaufenden Ponys und auch das letzte Einhorn drehte anmutig seine Runden.
+        <br /><br />
+        Ein besonderer Programmpunkt war die klassische Dressur-Quadrille, geritten zu eindrucksvoller Musik von vier Mitgliedern unseres Reitvereins.
+        <br /><br />
+        Abgerundet wurde die Show durch das bunte Rahmenprogramm, denn es wurde nicht nur ausgiebig für das leibliche Wohl gesorgt. Außerdem wurde auch Kinderschminken angeboten, eine Hüpfburg stand zum Austoben zur Verfügung und die Gäste konnten sich auf der Reitanlage umschauen und in den Ställen die Pferde und Ponys streichel.
+        <br /><br />
+        Ein großes Dankeschön gilt allen aktiven Teilnehmern der Theatergruppe und unseres Vereins bzw. der Reitanlage und natürlich den Sponsoren.
+      </>
+    )
   },
 
   "reitanlage/hoffest-2015": {
@@ -70,6 +92,8 @@ export const pageContents: Record<string, PageContent> = {
     content: (
       <ContentPferdepension  />
     ),
+    extra: ( <ExtraPferdepensio/> ),
+    images: ["/Stallungen/st1.jpg", "/Stallungen/st2.jpg","/Stallungen/st3.jpg", "/Stallungen/st4.jpg","/Stallungen/st5.jpg", "/Stallungen/st6.jpg","/Stallungen/st7.jpg", "/Stallungen/st8.jpg","/Stallungen/st9.jpg", "/Stallungen/st10.jpg","/Stallungen/st11.jpg", "/Stallungen/st12.jpg","/Stallungen/st13.jpg", "/Stallungen/st14.jpg"],
   },
 
   "pferdepension/stallungen": {

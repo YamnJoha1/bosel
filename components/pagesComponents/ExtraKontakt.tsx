@@ -1,23 +1,30 @@
+"use client"
+import { useState } from "react";
+import { Skeleton } from "../ui/skeleton";
 
 const ExtraKonakt = () => {
+  const [loading, setLoading] = useState(true);
+
   return (
-    <div className="flex flex-col md:flex-row w-full justify-between gap-6 md:gap-10 items-center p-2 pt-0">
-      <div className="space-y-4 text-sm text-white">
+    <div className="flex flex-col md:flex-row max-w-full justify-between gap-6 md:gap-10 items-left md:items-center p-2 pt-0">
+      <div className="space-y-4 text-sm text-white text-center px-20 md:px-0 md:text-left">
         <p className="font-semibold text-base text-gold">
           Reitsportanlage &quot;An der Bosel&quot;
         </p>
 
-        <p>
-          Köhlerstraße 107<br />
-          01640 Coswig<br />
-          OT Neusörnewitz
-        </p>
+        <div className="flex md:flex-col gap-4 justify-between">
+          <p>
+            Köhlerstraße 107<br />
+            01640 Coswig<br />
+            OT Neusörnewitz
+          </p>
 
-        <p>
-          Tel.: 03523-77 45 00<br />
-          Fax: 03523-77 45 01<br />
-          Funk: 0172/44 17 297
-        </p>
+          <p>
+            Tel.: 03523-77 45 00<br />
+            Fax: 03523-77 45 01<br />
+            Funk: 0172/44 17 297
+          </p>
+        </div>
 
         <p>
           Email:{" "}
@@ -37,24 +44,29 @@ const ExtraKonakt = () => {
             www.reitanlage-bosel.de
           </a>
         </p>
-
-        {/* Google Map */}
       </div>
-      <div className="flex-1 shadow-lg rounded-lg p-3 w-full">
+
+      {/* Google Map */}
+      <div className="flex-1 shadow-lg rounded-lg p-3 w-full relative overflow-hidden">
+        {loading && (
+          <div className="absolute inset-0 z-10 p-3 flex items-center justify-center">
+            <Skeleton className="w-full h-full rounded-xl animate-pulse bg-gray-200" />
+          </div>
+          )}
         <iframe
           title="Bosel Map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2463.184444735795!2d13.544490315894801!3d51.13759947957551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4708939994db7c63%3A0x9f18a2e5794aa542!2sReitsportanlage%20%22An%20der%20Bosel%22!5e0!3m2!1sen!2sde!4v1713200000000!5m2!1sen!2sde"
+          src="https://www.google.com/maps?q=Reitsportanlage+An+der+Bosel,+Coswig&output=embed"
           width="100%"
           height="300"
           style={{ border: 0 }}
           allowFullScreen
-          loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          className="rounded-xl shadow"
-        ></iframe>
+          className="rounded-xl shadow relative z-0"
+          onLoad={() => setLoading(false)}
+        />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ExtraKonakt
+export default ExtraKonakt;

@@ -14,6 +14,14 @@ const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const sidebarRef = useRef<HTMLDivElement>(null);
+  const [isLarge, setIsLarge] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsLarge(window.innerWidth < 1524);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const toggleDropdown = (key: string) =>
@@ -49,17 +57,17 @@ const Navbar = () => {
 
   return (
     <header
-      className={`w-full fixed top-0 z-50 transition-all duration-300 max-w-full
-        ${scrolled ? "bg-primary shadow-md" : "bg-transparent xl:pl-20 2xl:pl-20"}
-        h-[10vh] md:max-h-[12vh] xl:min-h-[12vh] 2xl:min-h-[15vh]
-        px-4 sm:px-6 xl:px-20 2xl:px-20
+    className={`w-full fixed top-0 z-50 transition-all duration-300 max-w-full
+      h-[10vh] md:max-h-[12vh] xl:min-h-[14vh] 2xl:min-h-[16vh]
+      px-4 sm:px-6 xl:px-20 2xl:px-18 
+      ${scrolled ? "bg-primary shadow-md" : "bg-transparent"}
       `}
     >
       <div className="flex justify-between items-center h-full">
         <Link href="/">
           <motion.div
             animate={{
-              scale: scrolled ? 1.5 : 1.65,
+              scale: scrolled ? 1.5 : 1.7,
               y: scrolled ? 0 : 10,
             }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -73,18 +81,17 @@ const Navbar = () => {
               loading="lazy"
               className="w-auto h-auto 
                 max-h-10
-                sm:max-h-10
                 md:max-h-[38px]
-                lg:max-h-[40px]
-                xl:max-h-[55px]
-                2xl:max-h-[80px]
+                lg:max-h-[50px]
+                xl:max-h-[60px]
+                2xl:max-h-[85px]
               "
             />
           </motion.div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-6 font-medium relative text-sm sm:text-base xl:text-[17px] 2xl:text-xl">
+        <nav className="hidden lg:flex gap-6 font-medium relative text-sm sm:text-base xl:text-[16px] 2xl:text-xl">
           {NAV_LINKS.map((link) =>
             link.sublinks ? (
               <div
@@ -110,13 +117,13 @@ const Navbar = () => {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="absolute left-0 mt-2 bg-primary text-white shadow-xl border border-gold rounded-md w-52 z-50"
+                      className="absolute left-0 mt-2 bg-primary text-white shadow-xl border border-gold rounded-md w-52 2xl:w-60 z-50"
                     >
                       {link.sublinks.map((sublink) => (
                         <Link
                           key={sublink.key}
                           href={sublink.href}
-                          className="block px-4 py-2 text-sm hover:bg-secondary hover:text-primary rounded-md transition-colors"
+                          className="block px-4 py-2 text-sm 2xl:text-lg hover:bg-secondary hover:text-primary rounded-md transition-colors"
                         >
                           {sublink.label}
                         </Link>
@@ -142,7 +149,7 @@ const Navbar = () => {
         {/* Mobile Menu Toggle */}
         <button
           onClick={toggleMenu}
-          className="md:hidden text-white cursor-pointer"
+          className="lg:hidden text-white cursor-pointer"
         >
           <Menu size={28} />
         </button>
@@ -153,7 +160,7 @@ const Navbar = () => {
         {isOpen && (
           <motion.aside
             ref={sidebarRef}
-            className="fixed top-0 right-0 h-screen w-4/5 max-w-xs bg-primary text-white shadow-lg z-50 p-6 pt-3 flex flex-col gap-6 overflow-y-auto md:hidden"
+            className="fixed top-0 right-0 h-screen w-4/5 max-w-xs bg-primary text-white shadow-lg z-50 p-6 pt-3 flex flex-col gap-6 overflow-y-auto lg:hidden"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
@@ -166,6 +173,7 @@ const Navbar = () => {
                 width={70}
                 height={50}
                 className="h-auto"
+                loading="lazy"
               />
               <button
                 onClick={() => setIsOpen(false)}

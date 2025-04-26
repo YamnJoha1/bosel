@@ -18,7 +18,9 @@ const FeatureCard = ({ title, description, image }: FeatureCardProps) => {
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
     >
-        <Image src={image} width={400} height={180} alt={title} className='object-cover shadow-xl w-full rounded-md h-44 mb-2' />
+        <Image src={image} width={400} height={180} alt={title} loading="lazy" 
+          className='object-cover shadow-xl w-full rounded-md h-44 mb-2' 
+        />
         <div className='flex flex-1 flex-col gap-2'>
           <h3 className="text-xl font-semibold text-white">{title}</h3>
           {typeof description === 'string' ? (

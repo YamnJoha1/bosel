@@ -115,6 +115,7 @@ export const ImageSlider = ({ images, interval = 4000 }: ImageSliderProps) => {
             key={idx}
             src={img}
             alt={`Thumbnail ${idx + 1}`}
+            loading="lazy"
             width={100}
             height={70}
             onClick={() => goToSlide(idx)}

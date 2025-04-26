@@ -13,6 +13,11 @@ export function PageHeader({ title }: { title?: string }) {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  function isMobileDevice() {
+    if (typeof window === "undefined") return false;
+    return window.innerWidth < 768;
+  }
+
   const toggleDropdown = (key: string) => {
     setActiveDropdown((prev) => (prev === key ? null : key));
   };
@@ -78,49 +83,67 @@ export function PageHeader({ title }: { title?: string }) {
         >
           {NAV_LINKS.map((link) => (
             <div
-              key={link.key}
-              className="relative group"
-              onMouseEnter={() => setActiveDropdown(link.key)}
-              onMouseLeave={() => setActiveDropdown(null)}
+            key={link.key}
+            className="relative group flex items-center gap-1"
+            onMouseEnter={() => setActiveDropdown(link.key)}
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
+            <Link
+              href={link.href}
+              className={`font-medium text-base sm:text-lg transition-colors ${
+                pathname.startsWith(link.href)
+                  ? "text-secondary-foreground underline"
+                  : "hover:text-gold"
+              }`}
             >
-              <Link
-                href={link.href}
-                onClick={() => toggleDropdown(link.key)}
-                className={`flex items-center gap-1 font-medium text-base sm:text-lg transition-colors ${
-                  pathname.startsWith(link.href)
-                    ? "text-secondary-foreground underline"
-                    : "hover:text-gold"
-                }`}
-              >
-                {link.label}
-                {link.sublinks && <ChevronDown size={16} />}
-              </Link>
-
-              {/* Dropdown */}
-              <AnimatePresence>
-                {activeDropdown === link.key && link.sublinks && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full left-1 -translate-x-1 mt-2 bg-primary border-gold border text-white rounded-lg shadow-lg px-2 py-1 z-50 min-w-fit"
-                  >
-                    {link.sublinks.map((sublink) => (
-                      <Link
-                        key={sublink.key}
-                        href={sublink.href}
-                        className={`block p-1 md:text-lg text-nowrap text-sm rounded hover:bg-secondary hover:text-primary  transition-colors ${
-                          pathname === sublink.href ? "font-semibold text-secondary" : ""
-                        }`}
-                      >
-                        {sublink.label}
-                      </Link>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+              {link.label}
+            </Link>
+          
+            {link.sublinks && (
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  toggleDropdown(link.key);
+                }}
+                className="flex items-center justify-center p-1 rounded-full bg-white/10 transition"
+                >
+                <ChevronDown
+                  size={16}
+                  className={`transform transition-transform ${
+                    activeDropdown === link.key ? "rotate-180" : "rotate-0"
+                  }`}
+                />
+              </button>
+            )}
+          
+            {/* Dropdown */}
+            <AnimatePresence>
+              {activeDropdown === link.key && link.sublinks && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-full left-1 -translate-x-1 mt-2 bg-primary border-gold border text-white rounded-lg shadow-lg px-2 py-1 z-50 min-w-fit"
+                >
+                  {link.sublinks.map((sublink) => (
+                    <Link
+                      key={sublink.key}
+                      href={sublink.href}
+                      className={`block p-1 md:text-lg text-nowrap text-sm rounded hover:bg-secondary hover:text-primary  transition-colors ${
+                        pathname === sublink.href ? "font-semibold text-secondary" : ""
+                      }`}
+                    >
+                      {sublink.label}
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+          
           ))}
         </nav>
       </div>

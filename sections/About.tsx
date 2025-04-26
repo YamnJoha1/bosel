@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const VideoSection = () => {
   return (
     <section className="padding-section bg-background text-foreground flex justify-center">
-      <div  className="max-container grid grid-cols-1 md:grid-cols-2 gap-12 items-center" id="das">
+      <div  className="max-container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" id="das">
         {/* Text Content */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}

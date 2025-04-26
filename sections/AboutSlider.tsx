@@ -54,13 +54,13 @@ const AboutSlider = () => {
   const navItem = NAV_LINKS.find((link) => link.key === currentKey);
 
   return (
-    <section className="relative max-container flex flex-col md:flex-row items-center justify-center bg-backgound padding-section">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-6xl w-full">
+    <section className="relative max-container flex flex-col lg:flex-row items-center justify-center bg-backgound padding-section">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-6xl w-full">
         {/* المحتوى النصي */}
         <AnimatePresence mode="wait">
           <motion.div
             key={currentKey}
-            className="text-center md:text-left h-[60vh] md:h-full md:block flex flex-col justify-between overflow-hidden"
+            className="text-center lg:text-left h-[25vh] lg:h-full lg:block flex flex-col justify-between overflow-hidden"
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -40 }}
@@ -68,7 +68,7 @@ const AboutSlider = () => {
           >
             <div className="text-left">
               <h2 className="title-section text-green-800">{content.title}</h2>
-              <p className="text-gray-700 max-w-xl line-clamp-9 leading-relaxed mb-6">
+              <p className="text-gray-700 max-w-xl line-clamp-4 leading-relaxed mb-6">
                 {content.description}
               </p>
 
@@ -76,7 +76,7 @@ const AboutSlider = () => {
             </div>
 
             {/* الدوائر */}
-            <div className="hidden md:flex gap-4 justify-start mb-6">
+            <div className="hidden lg:flex gap-4 justify-start mb-6">
               {selectedPages.map((_, i) => (
                 <button
                   key={i}
@@ -117,19 +117,20 @@ const AboutSlider = () => {
               width={600}
               height={400}
               className="object-cover w-full h-auto"
+              loading="lazy"
             />
           </motion.div>
         </AnimatePresence>
       </div>
 
       {/* أزرار التمرير */}
-      <div className="hidden md:flex">
+      <div className="hidden lg:flex">
         <Button onClick={() => { prev(); resetAutoSlide(); }} variant="outline" size="icon"
           className="absolute left-4 top-1/2 -translate-y-1/2 bg-green hover:bg-hovergreen hover:text-white/80 text-white p-4 rounded-full shadow border-none">
           <ChevronLeft className="w-5 h-5" />
         </Button>
       </div>
-      <div className="hidden md:flex">
+      <div className="hidden lg:flex">
         <Button onClick={() => { next(); resetAutoSlide(); }} variant="outline" size="icon" 
           className="absolute right-4 top-1/2 -translate-y-1/2 bg-green hover:bg-hovergreen hover:text-white/80 text-white p-4 rounded-full shadow border-none">
           <ChevronRight className="w-5 h-5" />
@@ -137,7 +138,7 @@ const AboutSlider = () => {
       </div>
 
       {/* للأجهزة الصغيرة */}
-      <div className="md:hidden flex justify-center gap-4 mt-8 items-center">
+      <div className="lg:hidden flex justify-center gap-4 mt-8 items-center">
         <Button onClick={() => { prev(); resetAutoSlide(); }} variant="outline" size="icon"
           className="bg-green hover:bg-hovergreen hover:text-white/80 text-white p-4 rounded-full shadow border-none"  
         >
