@@ -7,6 +7,7 @@ import Link from "next/link";
 import { NAV_LINKS } from "@/constants";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
+import Sidebar from "./Sidebar";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -148,7 +149,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Toggle */}
         <button
-          onClick={toggleMenu}
+          onClick={() => setIsOpen(true)}
           className="lg:hidden text-white cursor-pointer"
         >
           <Menu size={28} />
@@ -156,105 +157,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Sidebar */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.aside
-            ref={sidebarRef}
-            className="fixed top-0 right-0 h-screen w-4/5 max-w-xs bg-primary text-white shadow-lg z-50 p-6 pt-3 flex flex-col gap-6 overflow-y-auto lg:hidden"
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ type: "tween", duration: 0.3 }}
-          >
-            <div className="flex justify-between items-center mb-6">
-              <Image
-                src="/Bosel-Logo.webp"
-                alt="Bosel Logo"
-                width={70}
-                height={50}
-                className="h-auto"
-                loading="lazy"
-              />
-              <button
-                onClick={() => setIsOpen(false)}
-                className="cursor-pointer text-white"
-              >
-                <X size={28} />
-              </button>
-            </div>
-
-            {NAV_LINKS.map((link) =>
-              link.sublinks ? (
-                <div key={link.key} className="flex flex-col gap-1">
-                  <div className="flex justify-between items-center">
-                    <Link
-                      href={link.href}
-                      onClick={() => {
-                        setIsOpen(false);
-                        setActiveDropdown(null);
-                      }}
-                      className="text-lg font-medium hover:text-gold-500 transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                    <button
-                      onClick={() => toggleDropdown(link.key)}
-                      className="text-white hover:text-gold-500"
-                    >
-                      <ChevronDown
-                        size={20}
-                        className={`transition-transform cursor-pointer ${
-                          activeDropdown === link.key ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
-                  </div>
-
-                  <AnimatePresence>
-                    {activeDropdown === link.key && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="pl-4 flex flex-col gap-2 mt-1"
-                      >
-                        {link.sublinks.map((sublink) => (
-                          <Link
-                            key={sublink.key}
-                            href={sublink.href}
-                            onClick={() => {
-                              setIsOpen(false);
-                              setActiveDropdown(null);
-                            }}
-                            className={`text-base transition-colors hover:text-gold-500 ${
-                              pathname === sublink.href
-                                ? "text-gold-600"
-                                : "text-white"
-                            }`}
-                          >
-                            - {sublink.label}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ) : (
-                <Link
-                  key={link.key}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`text-lg font-medium transition-colors hover:text-gold-500 ${
-                    pathname === link.href ? "text-gold-600" : "text-white"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              )
-            )}
-          </motion.aside>
-        )}
-      </AnimatePresence>
+      <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
     </header>
   );
 };

@@ -53,16 +53,16 @@ export const FOOTER_CONTACT_INFO = {
   links: [
     { label: 'Telefon', value: '03523-77 45 00' },
     { label: 'E-Mail', value: 'info@reitanlage-bosel.de' },
-    { label: 'Adresse', value: 'Köhlerstraße 107, 01640 Coswig ' },
+    { label: 'Adresse', value: 'Köhlerstraße 107, 01640 Coswig, OT Neusörnewitz ' },
   ],
 };
 
 export const SOCIALS = {
   title: 'Folgen Sie uns',
   links: [
-    'icons/facebook.svg',
-    'icons/instagram.svg',
-  ],
+    { href: "/", icon: 'icons/facebook.svg' },
+    { href: "/", icon: 'icons/instagram.svg' },
+  ]
 };
 
 export const FEATURES_CARD_CONTENT = [

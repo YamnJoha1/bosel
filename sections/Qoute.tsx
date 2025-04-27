@@ -16,7 +16,7 @@ const Qoute = () => {
           <div className="absolute inset-0 bg-black/60" />
         </div>
       <div className='text-center flex flex-col items-center z-10'>
-        <h2 className='text-white text-2xl md:text-3xl lg:text-4xl font-bold lg:font-extrabold text-gold-gradient-to'>
+        <h2 className='text-white text-xl md:text-3xl lg:text-4xl font-bold lg:font-extrabold text-gold-gradient-to px-3 md:px-0'>
         Gib Deinem Pferd, was es braucht- und es wird Dir sein Herz schenken!
         </h2>
       </div>

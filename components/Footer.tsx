@@ -16,24 +16,6 @@ const Footer = () => {
     <footer className="bg-primary text-background  pt-4 md:pt-6 pb-4 md:pb-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Logo always on top, centered */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-10 text-center"
-        >
-          <Link href="/">
-            <Image
-              src="/Bosel-Logo.webp"
-              width={150}
-              height={30}
-              alt="logo"
-              className="mx-auto"
-            />
-          </Link>
-        </motion.div> */}
-
         {/* Footer Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10">
           <motion.div
@@ -107,20 +89,26 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-gold mb-2">{FOOTER_CONTACT_INFO.title}</h4>
             <ul className="text-sm space-y-2">
-              {FOOTER_CONTACT_INFO.links.map(({ label, value }) => (
-                <li key={label}>
-                  <span>{label}:</span>{" "}
-                  <span className="text-gold">{value}</span>
-                </li>
-              ))}
-            </ul>
-              <div className="flex gap-4 mt-2">
-                {SOCIALS.links.map((icon, i) => (
-                  <Link href="#" key={i}>
-                    <Image src={icon} alt="social" width={24} height={24} loading="lazy"/>
+            {FOOTER_CONTACT_INFO.links.map(({ label, value }) => (
+              <li key={label}>
+                <span>{label}:</span>{" "}
+                {label.toLowerCase().replace(/[^a-z]/g, "").includes("email") ? (
+                  <Link href={`mailto:${value}`} target="_blank" className="text-gold underline">
+                    {value}
                   </Link>
-                ))}
-              </div>
+                ) : (
+                  <span className="text-gold">{value}</span>
+                )}
+              </li>
+            ))}
+            </ul>
+            <div>
+              {SOCIALS.links.map((link, i) => (
+                <Link href={link.href} key={i} target="_blank" rel="noopener noreferrer" className="inline-block m-2">
+                  <Image src={link.icon} alt="social" width={24} height={24} loading="lazy" />
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
 
