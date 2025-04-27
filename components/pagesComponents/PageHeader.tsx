@@ -45,7 +45,7 @@ export function PageHeader({ title }: { title?: string }) {
     <div className="relative h-[28vh] 2xl:h-[44vh] md:h-[38vh]  lg:h-[40vh] text-gold">
       {/* Background Image */}
       <Image
-        src="/Natur1.png"
+        src="/Natur1.webp"
         alt="Header Background"
         fill
         className="object-cover"
@@ -59,14 +59,14 @@ export function PageHeader({ title }: { title?: string }) {
         <div className="flex flex-1 justify-between w-full md:w-[70%]  items-center px-4 md:px-0 md:py-2 mt-2">
           <Link href="/">
             <Image
-              src="/Bosel-Logo.png"
+              src="/Bosel-Logo.webp"
               alt="Bosel Logo"
               width={250}
               height={60}
               className="cursor-pointer w-30 2xl:w-70 lg:w-50 md:w-full"
             />
           </Link>
-          <motion.h1 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold"
+          <motion.h1 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold title-gradient"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}

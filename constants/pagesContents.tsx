@@ -19,6 +19,13 @@ type PageContent = {
   content?: ReactNode;
 };
 
+export type FerienDataType = {
+  season: string;
+  price: string;
+  dates: { week: string; from: string; to: string }[];
+  registrationForm: string;
+};
+
 export const pageContents: Record<string, PageContent> = {
   "reitanlage": {
     title: "Reitanlage",
@@ -26,7 +33,7 @@ export const pageContents: Record<string, PageContent> = {
     content: (
       <ContentReitanlage />    
     ),
-    images: ["/hero.jpg", "/Home.jpg"],
+    images: ["/Reitanlage/ra1.webp", "/Reitanlage/ra2.webp","/Reitanlage/ra3.webp", "/Reitanlage/ra4.webp","/Reitanlage/ra5.webp", "/Reitanlage/ra6.webp","/Reitanlage/ra7.webp", "/Reitanlage/ra8.webp","/Reitanlage/ra9.webp", "/Reitanlage/ra10.webp","/Reitanlage/ra11.webp", "/Reitanlage/ra12.webp"],
   },
 
   "reitanlage/trainingsmoeglichkeiten": {
@@ -49,7 +56,7 @@ export const pageContents: Record<string, PageContent> = {
                  Eine automatische Beregnungsanlage in der Reithalle trägt wesentlich zur Verbesserung der Elastizität der Tret­schicht bei, vermeidet Staubbildung und sorgt so­mit zur Verbesserung des Hallenklimas.
 
                         Unsere Zuschauerplätze auf einer seitlichen Tribüne sind für den perfekten Überblick konstruiert.`,
-    images: ["/Reithalle/rh1.jpg","/Reithalle/rh2.jpg","/Reithalle/rh3.jpg","/Reithalle/rh4.jpg"],
+    images: ["/Reithalle/rh1.webp","/Reithalle/rh2.webp","/Reithalle/rh3.webp","/Reithalle/rh4.webp"],
   },
 
   "reitanlage/aussenanlage": {
@@ -77,13 +84,14 @@ export const pageContents: Record<string, PageContent> = {
         <br /><br />
         Ein großes Dankeschön gilt allen aktiven Teilnehmern der Theatergruppe und unseres Vereins bzw. der Reitanlage und natürlich den Sponsoren.
       </>
-    )
+    ),
+    images: ["/Theater Pferde Show 2016/t1.webp","/Theater Pferde Show 2016/t2.webp","/Theater Pferde Show 2016/t3.webp","/Theater Pferde Show 2016/t4.webp","/Theater Pferde Show 2016/t5.webp","/Theater Pferde Show 2016/t6.webp","/Theater Pferde Show 2016/t7.webp","/Theater Pferde Show 2016/t8.webp","/Theater Pferde Show 2016/t9.webp","/Theater Pferde Show 2016/t10.webp","/Theater Pferde Show 2016/t11.webp","/Theater Pferde Show 2016/t12.webp","/Theater Pferde Show 2016/t13.webp","/Theater Pferde Show 2016/t14.webp","/Theater Pferde Show 2016/t15.webp","/Theater Pferde Show 2016/t16.webp","/Theater Pferde Show 2016/t17.webp","/Theater Pferde Show 2016/t18.webp","/Theater Pferde Show 2016/t19.webp","/Theater Pferde Show 2016/t20.webp","/Theater Pferde Show 2016/t21.webp"],
   },
 
   "reitanlage/hoffest-2015": {
     title: "Hoffest 2015",
-    description: `Ein gelungenes Hoffest mit tollen Vorführungen, Musik und kulinarischem Genuss.`,
-    images: ["/hoffest1.jpg", "/hoffest2.jpg"],
+    description: `Impressionen zum Hoffest am 3. Oktober 2015`,
+    images: ["/Hoffest 2015/h1.webp", "/Hoffest 2015/h2.webp","/Hoffest 2015/h3.webp", "/Hoffest 2015/h4.webp","/Hoffest 2015/h5.webp", "/Hoffest 2015/h6.webp","/Hoffest 2015/h7.webp", "/Hoffest 2015/h8.webp","/Hoffest 2015/h9.webp", "/Hoffest 2015/h10.webp","/Hoffest 2015/h11.webp", "/Hoffest 2015/h12.webp","/Hoffest 2015/h13.webp", "/Hoffest 2015/h14.webp","/Hoffest 2015/h15.webp", "/Hoffest 2015/h16.webp","/Hoffest 2015/h17.webp", "/Hoffest 2015/h18.webp"],
   },
 
   "pferdepension": {
@@ -93,7 +101,7 @@ export const pageContents: Record<string, PageContent> = {
       <ContentPferdepension  />
     ),
     extra: ( <ExtraPferdepensio/> ),
-    images: ["/Stallungen/st1.jpg", "/Stallungen/st2.jpg","/Stallungen/st3.jpg", "/Stallungen/st4.jpg","/Stallungen/st5.jpg", "/Stallungen/st6.jpg","/Stallungen/st7.jpg", "/Stallungen/st8.jpg","/Stallungen/st9.jpg", "/Stallungen/st10.jpg","/Stallungen/st11.jpg", "/Stallungen/st12.jpg","/Stallungen/st13.jpg", "/Stallungen/st14.jpg"],
+    images: ["/Stallungen/st10.webp","/Stallungen/st11.webp", "/Stallungen/st12.webp","/Stallungen/st13.webp", "/Stallungen/st14.webp"],
   },
 
   "pferdepension/stallungen": {
@@ -104,7 +112,7 @@ Unserer Pferdepension steht eine Vielzahl großräumiger, komfortabler Boxen zur
 Alle Stallanlagen verfügen über eigene Sattelkammern mit abschließbaren Sattelschränken zur Unterbringung Ihrer persönlichen Reitutensili­en.
 
 Vor bzw. in jedem Stallgebäude befinden sich Putzplätze für die Pflege Ihres Pferdes. Für eine wohlwollende Abkühlung nach dem Trai­ning oder an heißen Sommertagen sorgt unsere Pferdedusche im Außenbereich.`,
-    images: ["/Stallungen/st1.jpg", "/Stallungen/st2.jpg","/Stallungen/st3.jpg", "/Stallungen/st4.jpg","/Stallungen/st5.jpg", "/Stallungen/st6.jpg","/Stallungen/st7.jpg", "/Stallungen/st8.jpg","/Stallungen/st9.jpg", "/Stallungen/st10.jpg","/Stallungen/st11.jpg", "/Stallungen/st12.jpg","/Stallungen/st13.jpg", "/Stallungen/st14.jpg"],
+    images: ["/Stallungen/st1.webp", "/Stallungen/st2.webp","/Stallungen/st3.webp", "/Stallungen/st4.webp","/Stallungen/st5.webp", "/Stallungen/st6.webp","/Stallungen/st7.webp", "/Stallungen/st8.webp","/Stallungen/st9.webp", "/Stallungen/st10.webp","/Stallungen/st11.webp", "/Stallungen/st12.webp","/Stallungen/st13.webp", "/Stallungen/st14.webp"],
   },
 
  "pferdepension/betreuung-und-fuetterung": {
@@ -112,13 +120,13 @@ Vor bzw. in jedem Stallgebäude befinden sich Putzplätze für die Pflege Ihres 
     description: `Die uns anvertrauten Pferde genießen unsere ganze Aufmerksamkeit und Fürsorge. Ein Team aus erfahrenen Helfern und langjährigen Mitarbeitern sorgt sich fachkundig um das Wohl und die Gesundheit sowie um eine liebevolle Betreuung der Pferde. Die Pferdeboxen werden täglich gemistet und frische Einstreu eingebracht. Durch regelmäßige Boxen- und Stallreini­gungen sichern wir eine saubere, optimale Stallatmo­sphäre. Die Futtergabe erfolgt nach individuellem Bedarf mit Raufutter (Heu, Stroh) und Kraftfutter (Hafer, Gerste etc.). Das Raufutter stammt aus eigener Herstellung und zeichnet sich durch eine hohe Qualität aus. Die Menge an Kraftfutter wird individuell auf den Bedarf Ihres Pferdes abgestimmt. Beheizte Selbsttränken in jeder Box versorgen die Pferde mit frischem und temperiertem Wasser.
 
 Ein wesentlicher Baustein einer artgerechten Pferdehaltung ist die Gesundheit des Tieres zu erhalten bzw. wiederherzustellen. Externe Partner unterstützen uns hier umfassend in der medizinischen Betreuung (Tierarzt, Hufschmied, -orthopädie) und therapeutischen Behandlung (Physiotherapie, Osteopathie, Akupunktur).`,
-    images: ["/Betreuung & Fütterung/bf1.jpg","/Betreuung & Fütterung/bf2.jpg","/Betreuung & Fütterung/bf3.jpg","/Betreuung & Fütterung/bf4.jpg","/Betreuung & Fütterung/bf5.jpg","/Betreuung & Fütterung/bf6.jpg","/Betreuung & Fütterung/bf7.jpg","/Betreuung & Fütterung/bf8.jpg"],
+    images: ["/Betreuung & Fütterung/bf1.webp","/Betreuung & Fütterung/bf2.webp","/Betreuung & Fütterung/bf3.webp","/Betreuung & Fütterung/bf4.webp","/Betreuung & Fütterung/bf5.webp","/Betreuung & Fütterung/bf6.webp","/Betreuung & Fütterung/bf7.webp","/Betreuung & Fütterung/bf8.webp"],
   },
 
   "pferdepension/reit-und-bewegungsplaetze": {
     title: "Reit- & Bewegungsplätze",
     description: `Eine Vielzahl an Trainings- und Bewegungsmöglichkeiten für Ihr Pferd stellen wir Ihnen in unserer Reit­anlage zur Verfügung:`,
-    images: ["/Reit- & Bewegungsplätze/rb1.jpg","/Reit- & Bewegungsplätze/rb2.jpg","/Reit- & Bewegungsplätze/rb3.jpg","/Reit- & Bewegungsplätze/rb4.jpg","/Reit- & Bewegungsplätze/rb5.jpg"],
+    images: ["/Reit- & Bewegungsplätze/rb1.webp","/Reit- & Bewegungsplätze/rb2.webp","/Reit- & Bewegungsplätze/rb3.webp","/Reit- & Bewegungsplätze/rb4.webp","/Reit- & Bewegungsplätze/rb5.webp"],
     content: (
       <ContentBewegungsplaetze />
     ),
@@ -132,7 +140,7 @@ Ein wesentlicher Baustein einer artgerechten Pferdehaltung ist die Gesundheit de
 Mit viel Geduld, Behutsamkeit und besonderem Feeling für Jungtiere reiten unsere erfahrenen Reiter Ihren Youngster an. Gefühlvoll lernen sie dabei Ihrem jungen Pferd den Reiter auf seinem Rücken zu akzeptieren, seine Hilfen zu respektieren und folgsam dem Wunsch des Reiters nach zu kommen.
 
 Je nach physischer und psychischer Eignung sowie unter Beachtung des Alters, des Charakters, der Neigung und des Talents des Pferdes bilden wir es gezielt, solide und nachhaltig gemäß den Grundsätzen der Ausbildungsskala der klassischen Reitlehre aus. Vertrauen, Freude an der Arbeit und die Harmonie zwischen Pferd und Reiter bilden dabei die Grundlage für das Erreichen sportlicher Erfolge.`,
-    images: ["/Ausbildung/aus1.jpg","/Ausbildung/aus2.jpg","/Ausbildung/aus3.jpg","/Ausbildung/aus4.jpg"],
+    images: ["/Ausbildung/aus1.webp","/Ausbildung/aus2.webp","/Ausbildung/aus3.webp","/Ausbildung/aus4.webp"],
     content: (
       <ContentAusbildung />
     ),
@@ -154,7 +162,7 @@ Sie möchten erste Erfahrungen auf dem Pferderücken sammeln, sich weiterbilden.
 Unser Verein hat es sich zur Aufgabe gemacht, vor allem die Reiterjugend an ein umweltverträgliches und im Einklang mit der Natur befindliches Reiten heranzuführen und Reitern jeden Alters ein Umfeld zur Ausübung ihres Hobbys zu schaffen. In unserem Reitsportverein finden die Reiterjugend sowie die gestande­nen Reiterinnen und Reiter einen Heimatverein für die ersten und weite­ren sportlichen Erfolge. Und nicht zuletzt pflegen wir ein geselliges und freundschaftliches Mit­einander zwischen Jung und Alt, Reiter und Nichtreiter, Pferdebesitzer oder Pferdefreund.
 
 Jeder kann unserem Verein beitreten, der die Ziele und Interessen des Vereins, die in der Satzung niedergelegt sind, anerkennt.`,
-    images: ["/Reitverein/rv1.jpg","/Reitverein/rv2.jpg","/Reitverein/rv3.jpg","/Reitverein/rv4.jpg","/Reitverein/rv5.jpg","/Reitverein/rv6.jpg"],
+    images: ["/Reitverein/rv1.webp","/Reitverein/rv2.webp","/Reitverein/rv3.webp","/Reitverein/rv4.webp","/Reitverein/rv5.webp","/Reitverein/rv6.webp"],
     content: (
       <ContentReitverein  />
     ),
@@ -172,23 +180,47 @@ Jeder kann unserem Verein beitreten, der die Ziele und Interessen des Vereins, d
 
 "reiterferien": {
   title: "Reiterferien 2025",
-  description: `Osterferien, Sommerferien und Herbstferien – hier finden Sie alle Termine und Preise.
-
-  An-/Abreise:
-  Die Anreise erfolgt am Anreisetag ab 10 Uhr, die Abreise erfolgt am Abreisetag bis 11 Uhr.
-
-  Unterkunft:
-  Mehrbettzimmer auf dem Gelände der Reitanlage, WC, Dusche, Aufenthaltsraum.
-
-  Verpflegung:
-  Frühstück, Mittagessen, Abendbrot.
-
-  Möchten Sie Ihre Kinder anmelden? Bitte Formular ausdrucken und senden.`,
-  images: ["/Features/feature-1.jpg", "/Features/feature-2.jpg"],
+  description: `Auch in diesem Jahr bieten wir wieder das Abenteuer Pferdecamp auf unserer Reitanlage an. Kinder und Jugendliche ab dem Alter von 7 Jahren können bei uns eine ganze Woche erlebnisreiche und spannende Reiterferien verbringen.`,
+  images: ["/Features/feature-1.webp", "/Features/feature-2.webp"],
   content: (
     <ContentReiterferien />    
   ),
- 
-  
-  },
+  extra: (
+    <ExtraReiterferien />
+  ),
+},
 };
+ 
+
+export const ferienData: FerienDataType[] = [
+  {
+    season: 'Osterferien 2025',
+    price: '400,00 Euro pro Kind und Ferienwoche (5 Übernachtungen)',
+    dates: [
+      { week: '1. Woche', from: '21.04.', to: '26.04.2025' }
+    ],
+    registrationForm: '/anmeldung-pferdecamp-ostern-2025.pdf'
+  },
+  {
+    season: 'Sommerferien 2025',
+    price: '400,00 Euro pro Kind und Ferienwoche (5 Übernachtungen)',
+    dates: [
+      { week: '1. Woche', from: '30.06.', to: '05.07.2025' },
+      { week: '2. Woche', from: '07.07.', to: '12.07.2025' },
+      { week: '3. Woche', from: '14.07.', to: '19.07.2025' },
+      { week: '4. Woche', from: '21.07.', to: '26.07.2025' },
+      { week: '5. Woche', from: '28.07.', to: '01.08.2025' },
+      { week: '6. Woche', from: '04.08.', to: '09.08.2025' },
+    ],
+    registrationForm: '/anmeldung-pferdecamp-sommer-2025.pdf'
+  },
+  {
+    season: 'Herbstferien 2025',
+    price: '400,00 Euro pro Kind und Ferienwoche (5 Übernachtungen)',
+    dates: [
+      { week: '1. Woche', from: '06.10.', to: '11.10.2025' },
+      { week: '2. Woche', from: '13.10.', to: '18.10.2025' },
+    ],
+    registrationForm: '/anmeldung-pferdecamp-herbst-2025.pdf'
+  }
+];

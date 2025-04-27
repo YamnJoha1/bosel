@@ -62,8 +62,6 @@ export const SOCIALS = {
   links: [
     'icons/facebook.svg',
     'icons/instagram.svg',
-    
-  
   ],
 };
 
@@ -72,7 +70,7 @@ export const FEATURES_CARD_CONTENT = [
       title: "Osterferien 2025",
       description:
         "1. Woche  21.04  bis  26.04.2025",
-      image: "/Features/feature-1.jpg",
+      image: "/Features/feature-1.webp",
     },
     {
       title: "Sommerferien 2025",
@@ -84,7 +82,7 @@ export const FEATURES_CARD_CONTENT = [
         5:"Woche  28.07.  bis  01.08.2025",
         6:"Woche  04.08.  bis  09.08.2025",
       },
-      image: "/Features/feature-2.jpg",
+      image: "/Features/feature-2.webp",
     },
     {
       title: "Herbstferien 2025",
@@ -92,6 +90,6 @@ export const FEATURES_CARD_CONTENT = [
         1:"Woche  06.10 bis  11.10.2025 .",
         2:"Woche  13.10.  bis  18.10.2025"
       },
-      image: "/Features/feature-3.jpg",
+      image: "/Features/feature-3.webp",
     },
   ];

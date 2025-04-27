@@ -9,13 +9,13 @@ import { pageContents } from "@/constants/pagesContents";
 import { NAV_LINKS } from "@/constants";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const selectedPages = ["reitanlage", "pferdepension", "reitverein"] as const;
+const selectedPages = ["reitanlage", "pferdepension", "kontakt"] as const;
 type PageKey = typeof selectedPages[number];
 
 const images: Record<PageKey, string> = {
-  reitanlage: "/hero.jpg",
-  pferdepension: "/sam.jpg",
-  reitverein: "/HeroBackground.jpg",
+  reitanlage: "/Reitanlage/ra5.webp",
+  pferdepension: "/Stallungen/st2.webp",
+  kontakt: "/kont.webp",
 };
 
 const AUTO_SLIDE_DELAY = 7000;

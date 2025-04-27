@@ -1,9 +1,5 @@
 'use client'
 
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
-
 const ContentPferdepension: React.FC = () => {
   return (
     <div className="mx-auto text-white px-4 pt-8 max-w-5xl">

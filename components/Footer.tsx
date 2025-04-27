@@ -25,7 +25,7 @@ const Footer = () => {
         >
           <Link href="/">
             <Image
-              src="/Bosel-Logo.png"
+              src="/Bosel-Logo.webp"
               width={150}
               height={30}
               alt="logo"
@@ -44,7 +44,7 @@ const Footer = () => {
           >
             <Link href="/">
               <Image
-                src="/Bosel-Logo.png"
+                src="/Bosel-Logo.webp"
                 width={150}
                 height={30}
                 alt="logo"

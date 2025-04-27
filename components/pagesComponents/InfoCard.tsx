@@ -5,7 +5,7 @@ const InfoCard = () => {
   return (
     <aside className="max-h-fit bg-primary shadow-md rounded-2xl p-6 space-y-4 text-sm text-white flex flex-col items-center text-center">
       <Image
-        src="/Bosel-Logo.png"
+        src="/Bosel-Logo.webp"
         alt="Logo"
         width={96}
         height={96}

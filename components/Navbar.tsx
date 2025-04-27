@@ -74,7 +74,7 @@ const Navbar = () => {
             className="origin-left"
           >
             <Image
-              src="/Bosel-Logo.png"
+              src="/Bosel-Logo.webp"
               width={120}
               height={60}
               alt="Bosel Logo"
@@ -168,7 +168,7 @@ const Navbar = () => {
           >
             <div className="flex justify-between items-center mb-6">
               <Image
-                src="/Bosel-Logo.png"
+                src="/Bosel-Logo.webp"
                 alt="Bosel Logo"
                 width={70}
                 height={50}

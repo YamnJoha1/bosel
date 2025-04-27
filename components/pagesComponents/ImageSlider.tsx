@@ -120,7 +120,7 @@ export const ImageSlider = ({ images, interval = 4000 }: ImageSliderProps) => {
             height={70}
             onClick={() => goToSlide(idx)}
             className={`object-cover rounded-md cursor-pointer transition-all duration-300 border-2 ${
-              current === idx ? "border-green-600" : "border-transparent opacity-70 hover:opacity-100"
+              current === idx ? "border-gold" : "border-transparent opacity-70 hover:opacity-100"
             }`}
           />
         ))}

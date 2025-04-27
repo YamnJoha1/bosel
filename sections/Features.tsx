@@ -10,7 +10,7 @@ const Features = () => {
     <section className="relative padding-section text-white bg-primary/80 overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/home-bosel.jpg"
+          src="/home-bosel.webp"
           alt="Hintergrund"
           fill
           className="object-cover"

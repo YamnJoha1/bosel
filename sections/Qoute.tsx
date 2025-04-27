@@ -6,7 +6,7 @@ const Qoute = () => {
     <div className='relative h-80 w-full flex flex-col justify-center items-center gap-4 bg-primary/90 text-white'>
       <div className="absolute h-full w-full inset-0 ">
         <Image
-          src="/Home.jpg" 
+          src="/Home.webp" 
           layout="fill" 
           objectFit="cover" 
           quality={100} 

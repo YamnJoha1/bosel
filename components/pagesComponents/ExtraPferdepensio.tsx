@@ -15,7 +15,7 @@ const ExtraPferdepensio = () => {
           className="text-goldhover font-semibold hover:underline text-center mt-2 block"
         >
           <Image
-            src="/Stallungen/st14.jpg"
+            src="/Stallungen/st14.webp"
             alt="Pferd 1"
             width={120}
             height={120}
@@ -31,7 +31,7 @@ const ExtraPferdepensio = () => {
             className="text-goldhover font-semibold hover:underline mt-2 block text-center"
           >
             <Image
-              src="/Betreuung & Fütterung/bf2.jpg"
+              src="/Betreuung & Fütterung/bf2.webp"
               alt="Pferd 2"
               width={120}
               height={120}
@@ -47,7 +47,7 @@ const ExtraPferdepensio = () => {
             className="text-goldhover font-semibold hover:underline mt-2 block text-center"
           >
             <Image
-              src="/Reit- & Bewegungsplätze/rb2.jpg"
+              src="/Reit- & Bewegungsplätze/rb2.webp"
               alt="Pferd 3"
               width={120}
               height={120}

@@ -66,9 +66,14 @@
   .padding-section {
     @apply max-w-full px-6 sm:px-10 md:px-16 lg:px-24 xl:px-40 py-10 md:min-h-[86vh];
   }
+  .title-border-gradient {
+    @apply bg-clip-text text-transparent text-3xl md:text-4xl font-bold w-fit max-w-full mb-4 pb-1 border-b-4;
+    background-image: linear-gradient(to right, var(--gold-gradient-to), var(--gold-gradient-from));
+    border-color: var(--color-gold);
+  }
   .title-gradient {
-    @apply bg-clip-text text-transparent text-4xl font-bold;
-    background-image: linear-gradient(to right, var(--gold-gradient-from), var(--gold-gradient-to));
+    @apply bg-clip-text text-transparent font-bold mb-4 text-2xl md:text-3xl;    
+    background-image: linear-gradient(to right, var(--gold-gradient-to), var(--gold-gradient-from));
   }
   .title-section {
     @apply text-3xl md:text-4xl font-bold w-fit max-w-full mb-4 pb-1 border-b-4;
@@ -101,6 +106,9 @@
   .bg-green {
     background-color: var(--color-green);
   } 
+  .text-green {
+    color: var(--color-green);
+  } 
   .bg-hovergreen {
     background-color: var(--color-hovergreen);
   }
@@ -124,7 +132,7 @@
   --color-goldHover: #fabd44;
   --color-black: #000000;
   --color-light-black: #2b2b2b;
-  --color-white: rgb(248, 248, 248);
+  --color-white: rgb(241, 241, 241);
 
   /* Gradients */
   --gold-gradient-from: #f5deb3;
