@@ -60,8 +60,8 @@ export const FOOTER_CONTACT_INFO = {
 export const SOCIALS = {
   title: 'Folgen Sie uns',
   links: [
-    { href: "/", icon: 'icons/facebook.svg' },
-    { href: "/", icon: 'icons/instagram.svg' },
+    { href: "/", icon: '/icons/facebook.svg' },
+    { href: "/", icon: '/icons/instagram.svg' },
   ]
 };
 
