@@ -54,7 +54,7 @@ export default function ExtraReiterferien() {
                     </a>
                   </Button>
                   <Button asChild variant="default" className="text-green underline">
-                    <a href="/mitbringen-liste.pdf" target="_blank">
+                    <a href={ferien.mitbringen} target="_blank">
                       Was muss mitgebracht werden
                     </a>
                   </Button>

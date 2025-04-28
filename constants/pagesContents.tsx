@@ -24,6 +24,7 @@ export type FerienDataType = {
   price: string;
   dates: { week: string; from: string; to: string }[];
   registrationForm: string;
+  mitbringen: string;
 };
 
 export const pageContents: Record<string, PageContent> = {
@@ -199,7 +200,8 @@ export const ferienData: FerienDataType[] = [
     dates: [
       { week: '1. Woche', from: '21.04.', to: '26.04.2025' }
     ],
-    registrationForm: '/anmeldung-pferdecamp-ostern-2025.pdf'
+    registrationForm: '/Unterlagen//Anmeldung_Reiterferien_Ostern_2025.pdf',
+    mitbringen: '/Unterlagen//mitbringen-liste.pdf'
   },
   {
     season: 'Sommerferien 2025',
@@ -212,7 +214,8 @@ export const ferienData: FerienDataType[] = [
       { week: '5. Woche', from: '28.07.', to: '01.08.2025' },
       { week: '6. Woche', from: '04.08.', to: '09.08.2025' },
     ],
-    registrationForm: '/anmeldung-pferdecamp-sommer-2025.pdf'
+    registrationForm: '/Unterlagen/Anmeldung_Reiterferien_Ostern_2025.pdf',
+    mitbringen: '/Unterlagen//mitbringen-liste.pdf'
   },
   {
     season: 'Herbstferien 2025',
@@ -221,6 +224,7 @@ export const ferienData: FerienDataType[] = [
       { week: '1. Woche', from: '06.10.', to: '11.10.2025' },
       { week: '2. Woche', from: '13.10.', to: '18.10.2025' },
     ],
-    registrationForm: '/anmeldung-pferdecamp-herbst-2025.pdf'
+    registrationForm: '/Unterlagen//Anmeldung_Reiterferien_Ostern_2025.pdf',
+    mitbringen: '/Unterlagen//mitbringen-liste.pdf'
   }
 ];

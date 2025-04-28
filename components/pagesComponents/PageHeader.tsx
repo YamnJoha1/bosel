@@ -13,11 +13,6 @@ export function PageHeader({ title }: { title?: string }) {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  function isMobileDevice() {
-    if (typeof window === "undefined") return false;
-    return window.innerWidth < 768;
-  }
-
   const toggleDropdown = (key: string) => {
     setActiveDropdown((prev) => (prev === key ? null : key));
   };
