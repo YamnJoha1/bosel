@@ -73,7 +73,7 @@
     border-color: var(--color-gold);
   }
   .title-gradient {
-    @apply bg-clip-text text-transparent font-bold mb-4 text-2xl md:text-3xl;    
+    @apply bg-clip-text text-transparent font-bold mb-4;    
     background-image: linear-gradient(to right, var(--gold-gradient-to), var(--gold-gradient-from));
   }
   .title-section {

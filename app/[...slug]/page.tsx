@@ -54,7 +54,7 @@ export default async function Page({ params }: PageProps) {
         <main className="padding-section mx-auto px-4 py-12 space-y-12 text-white 2xl:mt-0 lg:mt-4">
           <section className="grid grid-cols-1 md:grid-cols-3 md:gap-20 gap-8">
             <div className="md:col-span-2 space-y-6">
-              <h1 className="text-4xl font-bold text-white title-border-gradient">{content.title}</h1>
+              <h1 className="text-2xl md:text-3xl 2xl:text-4xl font-bold text-white title-border-gradient">{content.title}</h1>
               <p className="text-lg text-white/90 leading-relaxed whitespace-pre-line">
                 {content.description}
               </p>
